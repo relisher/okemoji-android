@@ -12,7 +12,9 @@ import android.graphics.drawable.VectorDrawable;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import nickrout.lenslauncher.R;
 import nickrout.lenslauncher.background.BroadcastReceivers;
@@ -24,6 +26,8 @@ import nickrout.lenslauncher.ui.BaseActivity;
  * Created by nickrout on 2016/04/02.
  */
 public class AppUtil {
+
+
 
     private static final String TAG = AppUtil.class.getSimpleName();
 

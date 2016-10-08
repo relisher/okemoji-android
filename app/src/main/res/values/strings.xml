@@ -1,13 +1,13 @@
 <resources>
 
     <!-- App & Activity Strings -->
-    <string name="app_name"><b>Lens</b> Launcher</string>
+    <string name="app_name"><b>📌📌📌</b></string>
     <string name="activity_title_about">About</string>
     <string name="activity_title_arranger">Order &amp; Visibility</string>
 
     <!-- Tab Strings -->
-    <string name="tab_lens">Lens</string>
-    <string name="tab_apps">Apps</string>
+    <string name="tab_lens">📌📌📌</string>
+    <string name="tab_apps">Emojis</string>
     <string name="tab_settings">Settings</string>
 
     <!-- Settings Strings -->
