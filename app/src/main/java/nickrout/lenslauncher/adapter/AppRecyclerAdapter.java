@@ -103,18 +103,6 @@ public class AppRecyclerAdapter extends RecyclerView.Adapter {
             this.mApp = app;
             mLabel.setText(mApp.getLabel());
             mIcon.setImageDrawable(mApp.getIcon());
-            boolean isAppVisible =
-                    AppPersistent.getAppVisibility(mApp.getPackageName().toString(), mApp.getName().toString());
-            if (isAppVisible) {
-                mToggleAppVisibility.setImageResource(R.drawable.ic_visibility_grey_24dp);
-            } else {
-                mToggleAppVisibility.setImageResource(R.drawable.ic_visibility_off_grey_24dp);
-            }
-            if (mApp.getPackageName().toString().equals("nickrout.lenslauncher")) {
-                mToggleAppVisibility.setVisibility(View.INVISIBLE);
-            } else {
-                mToggleAppVisibility.setVisibility(View.VISIBLE);
-            }
         }
 
         public void toggleAppVisibility(App app) {

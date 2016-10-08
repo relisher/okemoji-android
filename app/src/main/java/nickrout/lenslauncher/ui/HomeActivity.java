@@ -102,12 +102,7 @@ public class HomeActivity extends BaseActivity implements Observer {
 
     private void removeHiddenApps() {
         for (int i = 0; i < mApps.size(); i++) {
-            if (!AppPersistent.getAppVisibility(
-                    mApps.get(i).getPackageName().toString(), mApps.get(i).getName().toString())) {
-                mApps.remove(i);
-                mAppIcons.remove(i);
-                i--;
-            }
+
         }
     }
 
