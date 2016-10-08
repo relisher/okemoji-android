@@ -7,20 +7,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.AssetManager;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.drawable.VectorDrawable;
+import android.support.graphics.drawable.VectorDrawableCompat;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import nickrout.lenslauncher.R;
 import nickrout.lenslauncher.background.BroadcastReceivers;
 import nickrout.lenslauncher.model.App;
 import nickrout.lenslauncher.model.AppPersistent;
 import nickrout.lenslauncher.ui.BaseActivity;
+
+import static java.security.AccessController.getContext;
 
 /**
  * Created by nickrout on 2016/04/02.
@@ -55,26 +61,17 @@ public class AppUtil {
             }
 */
             for (int i = 0; i < 28; i++) {
-                /*ResolveInfo resolveInfo = availableActivities.get(i);
 
-                app.setId(i);
-                try {
-                    app.setInstallDate(packageManager.getPackageInfo(resolveInfo.activityInfo.packageName, 0).firstInstallTime);
-                } catch (PackageManager.NameNotFoundException e) {
-                    app.setInstallDate(0);
-                }
-                app.setLabel(resolveInfo.loadLabel(packageManager));
-                app.setPackageName(resolveInfo.activityInfo.packageName);
-                app.setName(resolveInfo.activityInfo.name);
-                app.setIconResId(resolveInfo.activityInfo.getIconResource());
-                //VectorDrawable defaultBitmap = BitmapUtil.packageNameToBitmap(packageManager, resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.getIconResource());
-*/              App app = new App();
-                app.setIcon();
+                App app = new App();
+
+                VectorDrawable drawable = (VectorDrawable) context.getResources().getDrawable(
+                        R.drawable.ic_ahhh, null);
+                app.setIcon(drawable);
 
 				app.setPaletteColor(ColorUtil.getPaletteColorFromApp(app));
                 apps.add(app);
             }
-        }
+
         // AppSorter.sort(apps, sortType);
         return apps;
     }
