@@ -34,7 +34,7 @@ public class AppUtil {
         ArrayList<App> apps = new ArrayList<>();
         Intent intent = new Intent(Intent.ACTION_MAIN, null);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        List<ResolveInfo> availableActivities = null;
+        /*List<ResolveInfo> availableActivities = null;
         try {
             availableActivities = packageManager.queryIntentActivities(intent, 0);
         } catch (RuntimeException e) {
@@ -49,10 +49,10 @@ public class AppUtil {
                 if (iconPack.mName.equals(iconPackLabelName))
                     selectedIconPack = iconPack;
             }
+*/
+            for (int i = 0; i < 28; i++) {
+                /*ResolveInfo resolveInfo = availableActivities.get(i);
 
-            for (int i = 0; i < availableActivities.size(); i++) {
-                ResolveInfo resolveInfo = availableActivities.get(i);
-                App app = new App();
                 app.setId(i);
                 try {
                     app.setInstallDate(packageManager.getPackageInfo(resolveInfo.activityInfo.packageName, 0).firstInstallTime);
@@ -64,15 +64,14 @@ public class AppUtil {
                 app.setName(resolveInfo.activityInfo.name);
                 app.setIconResId(resolveInfo.activityInfo.getIconResource());
                 //VectorDrawable defaultBitmap = BitmapUtil.packageNameToBitmap(packageManager, resolveInfo.activityInfo.packageName, resolveInfo.activityInfo.getIconResource());
-                if (selectedIconPack != null)
-                    app.setIcon(selectedIconPack.getIconForPackage(app.getPackageName().toString(), defaultBitmap));
-                else
-                    app.setIcon(defaultBitmap);
+*/              App app = new App();
+                app.setIcon();
+
 				app.setPaletteColor(ColorUtil.getPaletteColorFromApp(app));
                 apps.add(app);
             }
         }
-        AppSorter.sort(apps, sortType);
+        // AppSorter.sort(apps, sortType);
         return apps;
     }
 
