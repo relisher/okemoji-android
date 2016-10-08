@@ -1,6 +1,7 @@
 package nickrout.lenslauncher;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.VectorDrawable;
 
 import java.util.ArrayList;
 import nickrout.lenslauncher.model.App;
@@ -13,7 +14,7 @@ public class AppsSingleton {
     private static AppsSingleton mAppsSingleton;
 
     private ArrayList<App> mApps;
-    private ArrayList<Bitmap> mAppIcons;
+    private ArrayList<VectorDrawable> mAppIcons;
 
     private AppsSingleton() {}
 
@@ -37,8 +38,8 @@ public class AppsSingleton {
         mApps = apps;
     }
 
-    public ArrayList<Bitmap> getAppIcons() {
-        ArrayList<Bitmap> appIcons = new ArrayList<>();
+    public ArrayList<VectorDrawable> getAppIcons() {
+        ArrayList<VectorDrawable> appIcons = new ArrayList<>();
         if (mAppIcons == null) {
             return appIcons;
         }
@@ -46,7 +47,7 @@ public class AppsSingleton {
         return appIcons;
     }
 
-    public void setAppIcons(ArrayList<Bitmap> appIcons) {
+    public void setAppIcons(ArrayList<VectorDrawable> appIcons) {
         mAppIcons = appIcons;
     }
 }

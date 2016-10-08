@@ -102,7 +102,7 @@ public class AppRecyclerAdapter extends RecyclerView.Adapter {
         public void setAppElement(App app) {
             this.mApp = app;
             mLabel.setText(mApp.getLabel());
-            mIcon.setImageBitmap(mApp.getIcon());
+            mIcon.setImageDrawable(mApp.getIcon());
             boolean isAppVisible =
                     AppPersistent.getAppVisibility(mApp.getPackageName().toString(), mApp.getName().toString());
             if (isAppVisible) {

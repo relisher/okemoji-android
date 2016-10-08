@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.VectorDrawable;
 import android.os.AsyncTask;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class SortAppsTask extends AsyncTask<Void, Void, Void> {
     private Settings mSettings;
 
     private ArrayList<App> mApps;
-    private ArrayList<Bitmap> mAppIcons;
+    private ArrayList<VectorDrawable> mAppIcons;
 
     public SortAppsTask(Context context,
                         Application application) {
@@ -45,7 +46,7 @@ public class SortAppsTask extends AsyncTask<Void, Void, Void> {
         mAppIcons = new ArrayList<>();
         for (int i = 0; i < apps.size(); i++) {
             App app = apps.get(i);
-            Bitmap appIcon = app.getIcon();
+            VectorDrawable appIcon = app.getIcon();
             if (appIcon != null) {
                 mApps.add(app);
                 mAppIcons.add(appIcon);

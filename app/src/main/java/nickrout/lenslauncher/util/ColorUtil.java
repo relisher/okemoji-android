@@ -13,7 +13,8 @@ import nickrout.lenslauncher.model.App;
 public class ColorUtil {
 
     public static @ColorInt int getPaletteColorFromApp(App app) {
-        return getPaletteColorFromBitmap(app.getIcon());
+        return 0;
+
     }
 
     public static @ColorInt int getPaletteColorFromBitmap(Bitmap bitmap) {

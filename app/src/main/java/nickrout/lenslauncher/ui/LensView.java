@@ -10,6 +10,7 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.NinePatchDrawable;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
@@ -51,7 +52,7 @@ public class LensView extends View {
     private int mSelectIndex;
 
     private ArrayList<App> mApps;
-    private ArrayList<Bitmap> mAppIcons;
+    private ArrayList<VectorDrawable> mAppIcons;
     private PackageManager mPackageManager;
 
     private float mAnimationMultiplier = 0.0f;
@@ -92,7 +93,7 @@ public class LensView extends View {
         init();
     }
 
-    public void setApps(ArrayList<App> apps, ArrayList<Bitmap> appIcons) {
+    public void setApps(ArrayList<App> apps, ArrayList<VectorDrawable> appIcons) {
         mApps = apps;
         mAppIcons = appIcons;
         invalidate();
@@ -322,9 +323,9 @@ public class LensView extends View {
 
     private void drawAppIcon(Canvas canvas, RectF rect, int index) {
         if (index < mAppIcons.size()) {
-            Bitmap appIcon = mAppIcons.get(index);
-            Rect src = new Rect(0, 0, appIcon.getWidth(), appIcon.getHeight());
-            canvas.drawBitmap(appIcon, src, rect, mPaintIcons);
+            VectorDrawable appIcon = mAppIcons.get(index);
+            Rect src = new Rect(0, 0, appIcon.getIntrinsicWidth(), appIcon.getIntrinsicHeight());
+            appIcon.draw(canvas);
 
             /**
              * Check if the app was installed Settings.SHOW_NEW_APP_TAG_DURATION ago, and if it has been opened since.
