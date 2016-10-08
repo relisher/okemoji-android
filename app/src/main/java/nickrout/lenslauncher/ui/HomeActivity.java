@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.VectorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +41,7 @@ public class HomeActivity extends BaseActivity implements Observer {
 
     private PackageManager mPackageManager;
     private ArrayList<App> mApps;
-    private ArrayList<Bitmap> mAppIcons;
+    private ArrayList<VectorDrawable> mAppIcons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +88,7 @@ public class HomeActivity extends BaseActivity implements Observer {
         mLensView.invalidate();
     }
 
-    private void assignApps(ArrayList<App> apps, ArrayList<Bitmap> appIcons) {
+    private void assignApps(ArrayList<App> apps, ArrayList<VectorDrawable> appIcons) {
         if (apps.size() == 0 || appIcons.size() == 0) {
             return;
         }

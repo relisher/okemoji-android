@@ -1,6 +1,7 @@
 package nickrout.lenslauncher.model;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.VectorDrawable;
 import android.support.annotation.ColorInt;
 
 /**
@@ -13,7 +14,7 @@ public class App {
     private CharSequence mPackageName;
     private CharSequence mName;
     private int mIconResId;
-    private Bitmap mIcon;
+    private VectorDrawable mIcon;
     private long mInstallDate;
     private @ColorInt int mPaletteColor;
 
@@ -60,11 +61,11 @@ public class App {
         mIconResId = iconResId;
     }
 
-    public Bitmap getIcon() {
+    public VectorDrawable getIcon() {
         return mIcon;
     }
 
-    public void setIcon(Bitmap icon) {
+    public void setIcon(VectorDrawable icon) {
         mIcon = icon;
     }
 
