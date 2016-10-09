@@ -1,7 +1,7 @@
 <resources>
 
     <!-- App & Activity Strings -->
-    <string name="app_name"><b>pushpin</b></string>
+    <string name="app_name"><b>okay</b></string>
     <string name="activity_title_about">About</string>
     <string name="activity_title_arranger">Order &amp; Visibility</string>
 
