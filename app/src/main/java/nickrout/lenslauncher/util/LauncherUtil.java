@@ -13,18 +13,8 @@ import android.content.pm.ResolveInfo;
 public class LauncherUtil {
 
     public static boolean isLauncherDefault(Application application) {
-        final Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        final ResolveInfo res = application.getPackageManager().resolveActivity(intent, 0);
-        if (res.activityInfo == null) {
-            return false;
-        } else if ("android".equals(res.activityInfo.packageName)) {
-            return false;
-        } else {
-            if (res.activityInfo.packageName.equals(application.getPackageName())) return true;
-            else
-                return false;
-        }
+
+        return false;
     }
 
     public static String getHomeLauncherName(Application application) {

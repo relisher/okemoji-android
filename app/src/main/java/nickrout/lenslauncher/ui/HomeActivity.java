@@ -101,9 +101,7 @@ public class HomeActivity extends BaseActivity implements Observer {
     }
 
     private void removeHiddenApps() {
-        for (int i = 0; i < mApps.size(); i++) {
 
-        }
     }
 
     @Override
