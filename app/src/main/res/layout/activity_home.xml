@@ -17,11 +17,42 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="bla"
-        android:onClick="sendMessage" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_width="0dp">
+            <ImageView
+                android:id="@+id/phant"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:layout_gravity="left"
+                />
+            <ImageView
+                android:id="@+id/meow"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:src="@drawable/mu"
+
+                android:layout_gravity="left"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/phant2"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+
+            android:layout_gravity="left"/>
+    </LinearLayout>
+
 
 </FrameLayout>

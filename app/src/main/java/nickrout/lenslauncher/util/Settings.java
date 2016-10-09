@@ -9,10 +9,10 @@ import android.preference.PreferenceManager;
  */
 public class Settings {
 
-    public static final float DEFAULT_ICON_SIZE = 18.0f;
-    public static final float DEFAULT_DISTORTION_FACTOR = 2.5f;
-    public static final float DEFAULT_SCALE_FACTOR = 1.0f;
-    public static final long DEFAULT_ANIMATION_TIME = 200;
+    public static final float DEFAULT_ICON_SIZE = 40.0f;
+    public static final float DEFAULT_DISTORTION_FACTOR = 1.2f;
+    public static final float DEFAULT_SCALE_FACTOR = 1.2f;
+    public static final long DEFAULT_ANIMATION_TIME = 300;
     public static final boolean DEFAULT_VIBRATE_APP_HOVER = false;
     public static final boolean DEFAULT_VIBRATE_APP_LAUNCH = true;
     public static final boolean DEFAULT_SHOW_NAME_APP_HOVER = true;

@@ -4,7 +4,7 @@
     <!-- App Colors -->
     <color name="colorPrimary">#111111</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#F50057</color>
+    <color name="colorAccent">#FFC04C</color>
 
     <!-- View Colors -->
     <color name="colorBlack">#000000</color>

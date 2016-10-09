@@ -11,7 +11,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -58,6 +61,15 @@ public class HomeActivity extends BaseActivity implements Observer {
         LoadedObservable.getInstance().addObserver(this);
         VisibilityChangedObservable.getInstance().addObserver(this);
         BackgroundChangedObservable.getInstance().addObserver(this);
+
+       ImageView btn = (ImageView)findViewById(R.id.meow);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+         public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, SettingsActivity.class));
+           }
+        });
     }
 
     @Override
