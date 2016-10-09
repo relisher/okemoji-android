@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "754273864196",
+    "firebase_url": "https://pinpoint-android-289be.firebaseio.com",
+    "project_id": "pinpoint-android-289be",
+    "storage_bucket": "pinpoint-android-289be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754273864196:android:9f70363bd2dbcb45",
+        "android_client_info": {
+          "package_name": "nickrout.lenslauncher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754273864196-dmsqc1shd9ulkdfued4v8on11psl5sl5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTWR9G9ugw3pVfkQtAx9Ltd9By299znXw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

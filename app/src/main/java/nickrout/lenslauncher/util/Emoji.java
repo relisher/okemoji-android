@@ -8,8 +8,8 @@ import java.util.Date;
 
 public class Emoji {
 
-    private String _name;
-    private String _date;
+    public String _name;
+    public String _date;
 
     Emoji(String name, Date date) {
         _name = name;
