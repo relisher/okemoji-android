@@ -124,7 +124,7 @@ public class AppUtil {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
         ref.push().setValue(new Emoji(emojiName, date));
-        //Toast.makeText(context, R.string.error_app_not_found, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "Your voice has been heard!", Toast.LENGTH_SHORT).show();
 
     }
 }

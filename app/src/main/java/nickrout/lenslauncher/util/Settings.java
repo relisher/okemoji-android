@@ -18,9 +18,9 @@ public class Settings {
     public static final boolean DEFAULT_SHOW_NAME_APP_HOVER = true;
     public static final boolean DEFAULT_SHOW_TOUCH_SELECTION = false;
     public static final boolean DEFAULT_SHOW_NEW_APP_TAG = true;
-    public static final String DEFAULT_BACKGROUND = "Wallpaper";
-    public static final String DEFAULT_BACKGROUND_COLOR = "#FFF8BBD0";
-    public static final String DEFAULT_HIGHLIGHT_COLOR = "#FFF50057";
+    public static final String DEFAULT_BACKGROUND = "Color";
+    public static final String DEFAULT_BACKGROUND_COLOR = "#ff7c85";
+    public static final String DEFAULT_HIGHLIGHT_COLOR = "#abffcf";
     public static final String DEFAULT_ICON_PACK_LABEL_NAME = "Default Icon Pack";
     public static final int DEFAULT_SORT_TYPE = 0;
 
