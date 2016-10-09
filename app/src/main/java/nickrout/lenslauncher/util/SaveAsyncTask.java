@@ -11,9 +11,10 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import android.os.AsyncTask;
+import android.util.Log;
 
 
-    public class SaveAsyncTask extends AsyncTask<Emoji, Void, Boolean> {
+public class SaveAsyncTask extends AsyncTask<Emoji, Void, Boolean> {
 
         QueryBuilder _queryBuilder;
 
@@ -33,10 +34,13 @@ import android.os.AsyncTask;
                 HttpPost request = new HttpPost(qb.buildContactsSaveURL());
 
                 StringEntity params =new StringEntity(qb.createEvent(contact));
+                Log.d("test", qb.createEvent(contact));
                 request.addHeader("content-type", "application/json");
                 request.setEntity(params);
+                Log.d("request", request.toString());
 
                 HttpResponse response = httpClient.execute(request);
+                Log.d("response", response.toString());
 
                 if(response.getStatusLine().getStatusCode()<205)
                 {
@@ -44,12 +48,13 @@ import android.os.AsyncTask;
                 }
                 else
                 {
+                    //throw new Exception(response.toString());
                     return false;
                 }
             } catch (Exception e) {
-                //e.getCause();
-                String val = e.getMessage();
-                String val2 = val;
+
+                e.getCause();
+                Log.d("error", e.getMessage());
                 return false;
             }
 

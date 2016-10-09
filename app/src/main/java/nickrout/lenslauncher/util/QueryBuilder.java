@@ -1,6 +1,7 @@
 package nickrout.lenslauncher.util;
 
 import android.content.Context;
+import android.widget.Toast;
 
 import nickrout.lenslauncher.R;
 
@@ -39,7 +40,7 @@ public class QueryBuilder {
      */
     public String getBaseUrl()
     {
-        return "https://api.mongolab.com/api/1/databases/"+getDatabaseName()+"/collections/";
+        return "https://api.mlab.com/api/1/databases/"+getDatabaseName()+"/collections/";
     }
 
     /**
@@ -57,7 +58,7 @@ public class QueryBuilder {
      */
     public String documentRequest()
     {
-        return "emoji";
+        return "quantity";
     }
 
     /**

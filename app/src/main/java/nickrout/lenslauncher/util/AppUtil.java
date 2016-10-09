@@ -27,16 +27,20 @@ import nickrout.lenslauncher.model.App;
 import nickrout.lenslauncher.model.AppPersistent;
 import nickrout.lenslauncher.ui.BaseActivity;
 
-import static java.security.AccessController.getContext;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 /**
  * Created by nickrout on 2016/04/02.
  */
+
 public class AppUtil {
 
 
 
     private static final String TAG = AppUtil.class.getSimpleName();
+
 
     public static int lol(int i)
     {
@@ -117,13 +121,10 @@ public class AppUtil {
 
     // Launch apps, for launcher :-P
     public static void launchComponent(String emojiName, Date date, Context context) {
-            QueryBuilder qb = new QueryBuilder(context);
-            Emoji emoji = new Emoji(emojiName, date);
-            qb.createEvent(emoji);
-            SaveAsyncTask sAT = new SaveAsyncTask();
-            sAT.setQueryBuilder(qb);
-            sAT.doInBackground(emoji);
-            Toast.makeText(context, R.string.error_app_not_found, Toast.LENGTH_SHORT).show();
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference ref = database.getReference();
+        ref.push().setValue(new Emoji(emojiName, date));
+        //Toast.makeText(context, R.string.error_app_not_found, Toast.LENGTH_SHORT).show();
 
     }
 }
