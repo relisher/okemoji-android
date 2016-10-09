@@ -105,7 +105,7 @@ public class AppUtil {
 
                 VectorDrawable drawable = (VectorDrawable) context.getResources().getDrawable(lol(i), null);
                 app.setIcon(drawable);
-
+                app.setId(i);
 				app.setPaletteColor(ColorUtil.getPaletteColorFromApp(app));
                 apps.add(app);
             }

@@ -402,7 +402,7 @@ public class SettingsActivity extends BaseActivity
 
     private class FragmentPagerAdapter extends FragmentStatePagerAdapter {
 
-        private static final int NUM_PAGES = 3;
+        private static final int NUM_PAGES = 1;
 
         private Context mContext;
 

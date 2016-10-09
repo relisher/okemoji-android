@@ -1,6 +1,7 @@
 package nickrout.lenslauncher.ui;
 
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -122,5 +124,9 @@ public class HomeActivity extends BaseActivity implements Observer {
         } else if (observable instanceof BackgroundChangedObservable) {
             setBackground();
         }
+    }
+
+    public void sendMessage(View view) {
+
     }
 }
