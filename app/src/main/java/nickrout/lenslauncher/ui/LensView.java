@@ -325,7 +325,7 @@ public class LensView extends View {
         if (index < mAppIcons.size()) {
             VectorDrawable appIcon = mAppIcons.get(index);
             Rect src = new Rect(0, 0, appIcon.getIntrinsicWidth(), appIcon.getIntrinsicHeight());
-            appIcon.draw(canvas);
+            canvas.drawBitmap(getBitmap(appIcon), src, rect, mPaintIcons);
 
             /**
              * Check if the app was installed Settings.SHOW_NEW_APP_TAG_DURATION ago, and if it has been opened since.
@@ -337,6 +337,15 @@ public class LensView extends View {
                 drawNewAppTag(canvas, rect);
             }
         }
+    }
+
+    private static Bitmap getBitmap(VectorDrawable vectorDrawable) {
+        Bitmap bitmap = Bitmap.createBitmap(vectorDrawable.getIntrinsicWidth(),
+                vectorDrawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        vectorDrawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        vectorDrawable.draw(canvas);
+        return bitmap;
     }
 
     private void drawCircle(Canvas canvas, RectF rect) {
