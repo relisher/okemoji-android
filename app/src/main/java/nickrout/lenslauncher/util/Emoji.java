@@ -11,6 +11,11 @@ public class Emoji {
     private String _name;
     private String _date;
 
+    Emoji(String name, Date date) {
+        _name = name;
+        _date = date.toString();
+    }
+
     String getName() {
         return _name;
     }

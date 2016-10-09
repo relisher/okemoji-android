@@ -15,6 +15,7 @@ import android.support.graphics.drawable.VectorDrawableCompat;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -115,8 +116,13 @@ public class AppUtil {
     }
 
     // Launch apps, for launcher :-P
-    public static void launchComponent(String packageName, String name, Context context) {
-
+    public static void launchComponent(String emojiName, Date date, Context context) {
+            QueryBuilder qb = new QueryBuilder(context);
+            Emoji emoji = new Emoji(emojiName, date);
+            qb.createEvent(emoji);
+            SaveAsyncTask sAT = new SaveAsyncTask();
+            sAT.setQueryBuilder(qb);
+            sAT.doInBackground(emoji);
             Toast.makeText(context, R.string.error_app_not_found, Toast.LENGTH_SHORT).show();
 
     }

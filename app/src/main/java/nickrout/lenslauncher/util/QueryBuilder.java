@@ -1,5 +1,7 @@
 package nickrout.lenslauncher.util;
 
+import android.content.Context;
+
 import nickrout.lenslauncher.R;
 
 /**
@@ -9,6 +11,11 @@ import nickrout.lenslauncher.R;
 
 public class QueryBuilder {
 
+    private Context _context;
+
+    QueryBuilder(Context ctx) {
+        _context = ctx;
+    }
     /**
      * Specify your database name here
      * @return
@@ -22,7 +29,7 @@ public class QueryBuilder {
      * @return
      */
     public String getApiKey() {
-        return R.s
+        return _context.getString(R.string.mongo_key);
     }
 
     /**
@@ -67,7 +74,7 @@ public class QueryBuilder {
      * @param emoji: Details of the person
      * @return
      */
-    public String createContact(Emoji emoji)
+    public String createEvent(Emoji emoji)
     {
         return String
                 .format("{\"document\" : {\"emoji_name\": \"%s\", "

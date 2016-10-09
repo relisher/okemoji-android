@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -27,6 +28,8 @@ import nickrout.lenslauncher.model.App;
 import nickrout.lenslauncher.model.AppPersistent;
 import nickrout.lenslauncher.ui.SettingsActivity;
 import nickrout.lenslauncher.util.AppUtil;
+
+import static nickrout.lenslauncher.util.AppUtil.lol;
 
 public class AppRecyclerAdapter extends RecyclerView.Adapter {
 
@@ -166,7 +169,7 @@ public class AppRecyclerAdapter extends RecyclerView.Adapter {
         public boolean onMenuItemClick(MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.menu_item_element_open:
-                    AppUtil.launchComponent(mApp.getPackageName().toString(), mApp.getName().toString(), mContext);
+                    AppUtil.launchComponent(Integer.toString(mApp.getId()), new Date(), mContext);
                     return true;
                 case R.id.menu_item_element_app_info:
                     try {

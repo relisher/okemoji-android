@@ -22,6 +22,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import nickrout.lenslauncher.R;
 import nickrout.lenslauncher.model.App;
@@ -390,7 +391,7 @@ public class LensView extends View {
         if (mPackageManager != null && mApps != null && mSelectIndex >= 0) {
             AppUtil.launchComponent(
                     (String) mApps.get(mSelectIndex).getPackageName(),
-                    (String) mApps.get(mSelectIndex).getName(),
+                    new Date(),
                     getContext());
         }
     }
