@@ -37,6 +37,45 @@ public class AppUtil {
 
     private static final String TAG = AppUtil.class.getSimpleName();
 
+    public static int lol(int i)
+    {
+        switch (i)
+        {
+            case 1: return R.drawable.ic_ahhh;
+            case 2: return R.drawable.ic_angry;
+            case 3: return R.drawable.ic_crying;
+            case 4: return R.drawable.ic_ded;
+            case 5: return R.drawable.ic_ehh;
+            case 6: return R.drawable.ic_embarassed;
+            case 7: return R.drawable.ic_glasses;
+
+            case 8: return R.drawable.ic_halo;
+            case 9: return R.drawable.ic_happy;
+            case 10: return R.drawable.ic_happyblush;
+            case 11: return R.drawable.ic_kiss;
+            case 12: return R.drawable.ic_laughingcrying;
+            case 13: return R.drawable.ic_love;
+            case 14: return R.drawable.ic_lowkey;
+
+            case 15: return R.drawable.ic_nocomment;
+            case 16: return R.drawable.ic_ohyou;
+            case 17: return R.drawable.ic_saddissapointed;
+            case 18: return R.drawable.ic_sadfrustrated;
+            case 19: return R.drawable.ic_yikes;
+            case 20: return R.drawable.ic_sick;
+            case 21: return R.drawable.ic_sideeye;
+
+            case 22: return R.drawable.ic_sleep;
+            case 23: return R.drawable.ic_steaming;
+            case 24: return R.drawable.ic_suggestive;
+            case 25: return R.drawable.ic_tongue;
+            case 26: return R.drawable.ic_unhappy;
+            case 27: return R.drawable.ic_vhappy;
+            case 28: return R.drawable.ic_wow;
+
+        }
+         return -1;
+    }
     // Get all available apps for launcher
     public static ArrayList<App> getApps(
             PackageManager packageManager, Context context, Application application,
@@ -60,12 +99,11 @@ public class AppUtil {
                     selectedIconPack = iconPack;
             }
 */
-            for (int i = 0; i < 28; i++) {
+            for (int i = 1; i <= 28; i++) {
 
                 App app = new App();
 
-                VectorDrawable drawable = (VectorDrawable) context.getResources().getDrawable(
-                        R.drawable.ic_ahhh, null);
+                VectorDrawable drawable = (VectorDrawable) context.getResources().getDrawable(lol(i), null);
                 app.setIcon(drawable);
 
 				app.setPaletteColor(ColorUtil.getPaletteColorFromApp(app));
@@ -78,36 +116,8 @@ public class AppUtil {
 
     // Launch apps, for launcher :-P
     public static void launchComponent(String packageName, String name, Context context) {
-        if (packageName != null && name != null) {
-            Intent componentIntent = new Intent();
-            componentIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            componentIntent.setComponent(new ComponentName(packageName, name));
-            if (!packageName.equals("nickrout.lenslauncher")) {
-                componentIntent.setAction(Intent.ACTION_MAIN);
-            }
-            componentIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-            try {
-                // Launch Component
-                context.startActivity(componentIntent);
-                if (context instanceof BaseActivity) {
-                    ((BaseActivity) context).overridePendingTransition(
-                        R.anim.fade_in, R.anim.fade_out
-                    );
-                }
-                // Increment app open count
-                AppPersistent.incrementAppCount(packageName, name);
-                // Resort apps (if open count selected)
-                Settings settings = new Settings(context);
-                if (settings.getSortType() == AppSorter.SortType.OPEN_COUNT_ASCENDING ||
-                        settings.getSortType() == AppSorter.SortType.OPEN_COUNT_DESCENDING) {
-                    Intent editAppsIntent = new Intent(context, BroadcastReceivers.AppsEditedReceiver.class);
-                    context.sendBroadcast(editAppsIntent);
-                }
-            } catch (ActivityNotFoundException e) {
-                Toast.makeText(context, R.string.error_app_not_found, Toast.LENGTH_SHORT).show();
-            }
-        } else {
+
             Toast.makeText(context, R.string.error_app_not_found, Toast.LENGTH_SHORT).show();
-        }
+
     }
 }
