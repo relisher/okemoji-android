@@ -14,6 +14,7 @@ public class LensCalculator {
 
     // Algorithm for calculating equispaced grid
     public static Grid calculateGrid(Context context, int screenWidth, int screenHeight, int itemCount) {
+
         Grid grid = new Grid();
         grid.setItemCount(itemCount);
         int itemCountHorizontal, itemCountVertical;
